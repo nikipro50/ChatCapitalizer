@@ -35,4 +35,19 @@ public class Notifier
 
         this.client.player.sendMessage(Text.literal("[ChatCapitalizer] ").setStyle(Style.EMPTY.withColor(Formatting.GOLD)).append(message));
     }
+
+    public void notifyUpdate()
+    {
+        if (this.client == null) return;
+
+        this.client.getToastManager().add(
+                SystemToast.create(
+                        this.client,
+                        SystemToast.Type.PERIODIC_NOTIFICATION,
+                        Text.literal("ChatCapitalizer - Updater").setStyle(Style.EMPTY.withColor(Formatting.RED)),
+                        Text.literal("Update this mod for new functions!").setStyle(Style.EMPTY.withColor(Formatting.WHITE))
+                )
+        );
+    }
+
 }

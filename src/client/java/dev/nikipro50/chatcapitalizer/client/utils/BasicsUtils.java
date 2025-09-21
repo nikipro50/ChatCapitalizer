@@ -1,13 +1,21 @@
 package dev.nikipro50.chatcapitalizer.client.utils;
 
 import dev.nikipro50.chatcapitalizer.client.config.ConfigManager;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class BasicsUtils
 {
+    public static Optional<ModContainer> modContainer(String modId)
+    {
+        return FabricLoader.getInstance().getModContainer(modId);
+    }
+
     @NotNull
     public static String formatMessage(@NotNull String message, List<String> players)
     {
