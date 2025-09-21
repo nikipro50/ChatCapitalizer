@@ -16,7 +16,7 @@ public class ConfigKeyBind
             {
                 if (client.currentScreen == null)
                 {
-                    Screen screen = ConfigScreen.create(client.currentScreen, client);
+                    Screen screen = ConfigScreen.create(client.currentScreen);
                     client.setScreen(screen);
                 }
             }
